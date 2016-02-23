@@ -7,7 +7,7 @@
     <ProjectGuid>{F86DDB80-F4D1-41C5-90D5-C1CC6D3E7773}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AsyncPropertyChangeNotifier</RootNamespace>
+    <RootNamespace>System.ComponentModel</RootNamespace>
     <AssemblyName>AsyncPropertyChangeNotifier</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -53,12 +53,91 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncList.cs" />
     <Compile Include="AsyncPropertyChangeNotifier.cs" />
+    <Compile Include="ICoreProperty.cs" />
     <Compile Include="InternalUtilities.cs" />
+    <Compile Include="IValidatePropertyChanging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="packages\Nito.AsyncEx.3.0.1\Nito.AsyncEx.3.0.1.nupkg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\MonoAndroid\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\MonoAndroid\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\MonoAndroid\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\MonoAndroid\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\MonoAndroid\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\MonoAndroid\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net40\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net40\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net40\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net40\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net40\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net40\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\netcore45\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\netcore45\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\netcore45\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\netcore45\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\netcore45\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\netcore45\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45+sl4+wp71\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45+sl4+wp71\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45+sl5+wp8+wpa81\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45+sl5+wp8+wpa81\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net40+netcore45\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net45+netcore45+wp8+wpa81\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net45+netcore45+wp8+wpa81\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net45+netcore45+wpa81\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net45+netcore45+wpa81\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net45+netcore45+wpa81\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\portable-net45+netcore45+wpa81\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\sl4\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\sl4\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\sl4\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\sl4\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\sl5\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\sl5\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\sl5\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\sl5\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wp71\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wp71\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wp71\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wp71\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wp8\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wp8\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wp8\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wp8\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wpa81\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wpa81\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wpa81\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wpa81\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wpa81\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\wpa81\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.iOS10\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.iOS10\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.iOS10\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.iOS10\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.iOS10\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.iOS10\Nito.AsyncEx.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.Mac20\Nito.AsyncEx.Concurrent.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.Mac20\Nito.AsyncEx.Concurrent.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.Mac20\Nito.AsyncEx.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.Mac20\Nito.AsyncEx.Enlightenment.dll" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.Mac20\Nito.AsyncEx.Enlightenment.xml" />
+    <Content Include="packages\Nito.AsyncEx.3.0.1\lib\Xamarin.Mac20\Nito.AsyncEx.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

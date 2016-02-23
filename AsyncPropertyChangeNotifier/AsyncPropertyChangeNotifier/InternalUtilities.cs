@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace System.ComponentModel
@@ -60,6 +57,19 @@ namespace System.ComponentModel
                 var args = new NotifyCollectionChangedEventArgs(
                     NotifyCollectionChangedAction.Replace
                   , new[] { item }
+                  , index);
+
+                handler.FireAndForget(me, args);
+            }
+        }
+
+        public static void Add(this NotifyCollectionChangedEventHandler handler, object me, int index, params object[] items)
+        {
+            if (handler != null)
+            {
+                var args = new NotifyCollectionChangedEventArgs(
+                    NotifyCollectionChangedAction.Add
+                  , new[] { items }
                   , index);
 
                 handler.FireAndForget(me, args);
