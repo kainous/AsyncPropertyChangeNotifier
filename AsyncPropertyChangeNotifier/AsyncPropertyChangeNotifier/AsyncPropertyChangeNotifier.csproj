@@ -54,7 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncList.cs" />
+    <Compile Include="CoreProperty.cs" />
+    <Compile Include="DataChangeEvent.cs" />
     <Compile Include="DispatchSafeList.cs" />
+    <Compile Include="IDataChangeEvent.cs" />
     <Compile Include="ThreadSafePropertyChangeNotifier.cs" />
     <Compile Include="PropertyChangeNotifier.cs" />
     <Compile Include="DisposableAction.cs" />
