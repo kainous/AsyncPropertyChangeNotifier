@@ -25,8 +25,8 @@ namespace System.ComponentModel
 
         #region Events
 
-        public event NotifyCollectionChangedEventHandler CollectionChanged;
-        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual event NotifyCollectionChangedEventHandler CollectionChanged;
+        public virtual event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
@@ -220,6 +220,9 @@ namespace System.ComponentModel
                 return index;
             }
         }
+
+        public int Add(params T[] items)
+        { return Add((IEnumerable<T>)items); }
 
         void IList<T>.Insert(int index, T item)
         { Insert(index, item); }
